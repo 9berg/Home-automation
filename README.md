@@ -29,6 +29,24 @@ SX1308: https://www.aliexpress.com/item/1005003039023039.html?src=google&src=goo
 To find a Westerstrand 230mm time-face, go ask a janitor to a school or similar facility in Sweden or consult any digital circular marketplace.
 
 
+Adding the components was done with freely hanging board cable and a bit of soldering for the pin lacking chips. Before I had realized that the Arduino could not send that great a signal to make the time right, I put the components on a breadboard. Images below show the progress. 
+
+![Image](https://github.com/user-attachments/assets/e6207a55-01e6-4ea3-bd06-8b9a1a832bc1)
+The breadboard uses two separate lines for ground and current feed (two long canals on the left of the components). 
+
+
+I decided to have 5v in the feed and the 24v output solely to the clock. 
+
+
+![Image](https://github.com/user-attachments/assets/f5009000-42f7-4494-b1f8-af0861ad5a69)
+
+
+The above image shows the connection points on the RTC. This was GND, drive voltage (VCC), serial clock (SCL) and serial Data (SDA). The spacing matched well with the breadboard I used, but soldering needed to be done for the fixation and creation of a circuit. The SCL was connected with port 10 on the Arduino. 
+
+
+
+
+
 
 
 To make the signal change polarity, I sketched what I thought to be a good solution. This, I later understood, was a classic component called the H-Bridge. Down below are images of what I imagined this part to do. It used some kind of gates (initially I thought this could be some PNP or NPN transistors, I wasn't sure).
