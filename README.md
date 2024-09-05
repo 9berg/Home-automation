@@ -167,3 +167,8 @@ To my delight, the light appeared, showing that the code and circuit design was 
 
 
 I then connected this to a multimeter and increased the voltage sent from the SX1308 to an average of 24v.   
+
+To finish off, I used a USB c connector to ensure that I could use it with both battery and direct power. Since the Arduino consumes roughly 20mA, the battery alternative needs to be in the x-thousands of milliamps to not require changing all the time. For my project it was rather the option, not the efficiency, that was central.  If one really demands a more power efficient option, I believe a ATTINI85 could be a reasonable improvement. 
+![Image](https://github.com/user-attachments/assets/ea73588d-1b98-443c-a827-9b260ae5fc51)
+This project has led me into some kind of interest of robotics and home automation. I do think I've been inspired to do some more projects in that fashion that I can share on this account in the future.  
+
