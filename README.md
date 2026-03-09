@@ -59,12 +59,6 @@ The above image shows the connection points on the RTC. This was GND, drive volt
 
 To make the signal change polarity, I sketched what I thought to be a good solution. This (I later understood) greatly resembled what is a classic H-Bridge. Down below are images of what I imagined this part to do. It used some kind of gates (initially I thought this could be some PNP or NPN transistors, I wasn't sure).
 
-Image
-I indicated M for "motor" and wrote directions for what would need to happen to make the current direction shift.
-Image
-Here, the direction has changed (see arrow direction for guidance).
-Image
-
 
 
 The code was used with Arduino IDE. The ports on the Arduino can be changed if desirable, as well as the synchronization start for the time and date. When setting up, I recommend using the Alarm.timeRepeat set at 1 instead of 60 to enable testing connection every second. 
