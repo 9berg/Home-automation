@@ -43,7 +43,7 @@ Adding the components was done with freely hanging board cable and a bit of sold
 The breadboard uses two separate lines for ground and current feed (two long canals on the left of the components). 
 
 
-I decided to have 5v in the feed and the 24v output solely to the clock. 
+I decided to have 5v in the feed and the 24v output separately connected for the clock. 
 
 
 ![Image](https://github.com/user-attachments/assets/f5009000-42f7-4494-b1f8-af0861ad5a69)
