@@ -2,19 +2,17 @@
 
 This project was to make a frequently public environment clock system adapted for at-home usage.
 
-The idea was to abandon the usage of a remote clock signal device (commonly installed at separate facility room in schools, airports, hospitals etc.) and shrink it enough to enable mounting directly on the clock-face back, making the system installable just like any normal clock in a house.
+The idea was to replace a remote clock signal device (commonly installed at separate facility room in schools, airports, hospitals etc.) with a solution mounted directly on the clock-face back, making the system installable just like any normal clock in a house.
 
-The subtasks and components for this signal device were found as follows:
+The following components where nedded:
 
-- A pulse signal that is to be repeatedly sent to a control unit. A signal which, if it weren't an exact render, at least with great similarity could resemble time itself.
-This was found to be a RTC DS1307- s.c a Real Time Clock.
+- A signal device to aquire a reference pulse for our control unit. A good fit was in RTC DS1307- s.c a Real Time Clock.
 
-- A transformer of some sort, amplifying the voltage enough to push the dials that were connected through gears to the core of the solenoid. From reading manuals, I understood that this had to be done with a 24 volt polar switching current.
-Due to this demand, I purchased a SX1308 "voltage booster".
+- A transformer of some sort (a SX1308 "voltage booster" was used), amplifying the voltage enough to push the dials that were connected through gears to the core of the solenoid. This also had to be done with polar switching current so it coud move back and forth.
 
 - A signal operated H-Bridge that would output the polar switching pattern, favored by the clock. For this, the NS754410 was chosen.
 
-- A control unit operating the H-Bridge signal. Not only did this have to transfer the RTC info correctly but also change the polarity, and send a square signal with a phase duration long enough to satisfy the inertia in the solenoid as well as the connected mechanics in the movement of the clock arms, which was to be an Arduino Nano.
+- A control unit operating the H-Bridge signal. Not only did this have to transfer the RTC info correctly, but also change the polarity, and send a square signal with a phase duration long enough to satisfy the inertia in the solenoid as well as the connected mechanics in the movement of the clock arms. For this, the Arduino Nano was used.
 
 Links to the components can be found below:
 
@@ -29,7 +27,7 @@ SX1308: https://www.aliexpress.com/item/1005003039023039.html?src=google&src=goo
 To find a Westerstrand 230mm time-face, go ask a janitor to a school or similar facility in Sweden or consult any digital circular marketplace.
 
 
-To make the signal change polarity, I sketched what I thought to be a good solution. This, I later understood, was a classic component called the H-Bridge. Down below are images of what I imagined this part to do. It used some kind of gates (initially I thought this could be some PNP or NPN transistors, I wasn't sure). 
+To make the signal change polarity, I sketched what I thought to be a good solution. This, I later understood, was a classic component called the H-Bridge. Down below are images of what I imagined this part to do. It used some kind of gates (initially I thought this could be some PNP or NPN transistors). 
 
 ![Image](https://github.com/user-attachments/assets/2afc39ff-a850-480a-b888-dbd4fa096ca7)
 I indicated M for "motor" and wrote directions for what would need to happen to make the current direction shift. 
@@ -37,8 +35,6 @@ I indicated M for "motor" and wrote directions for what would need to happen to 
 Here, the direction has changed (see arrow direction for guidance). 
 ![Image](https://github.com/user-attachments/assets/ccb10140-1dc7-4ae8-9225-38f7ee8a048b)
 A while later, this H-bridge was placed as the 754410 component in the final circuit (here the RTC is missing).  
-
-  
 
 
 Adding the components was done with freely hanging board cable and a bit of soldering for the pin lacking chips. Before I had realized that the Arduino could not send that great a signal to make the time right, I put the components on a breadboard. Images below show the progress. 
