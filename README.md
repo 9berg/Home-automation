@@ -6,9 +6,9 @@ The idea was to replace a remote clock signal device (commonly installed at sepa
 
 The following components where nedded:
 
-- A signal device to aquire a reference pulse for our control unit. A good fit was in RTC DS1307- s.c a Real Time Clock.
+- A signal device to aquire a reference pulse for our control unit. A good fit was found in RTC DS1307- s.c a Real Time Clock.
 
-- A transformer of some sort (a SX1308 "voltage booster" was used), amplifying the voltage enough to push the dials that were connected through gears to the core of the solenoid. This also had to be done with polar switching current so it coud move back and forth.
+- A transformer of some sort (a SX1308 "voltage booster" was used), amplifying the voltage enough to push the dials that were connected through gears to the core of the solenoid. This also had to be done with polar switching current so it coud rock both back and forth.
 
 - A signal operated H-Bridge that would output the polar switching pattern, favored by the clock. For this, the NS754410 was chosen.
 
@@ -37,7 +37,7 @@ Here, the direction has changed (see arrow direction for guidance).
 A while later, this H-bridge was placed as the 754410 component in the final circuit (here the RTC is missing).  
 
 
-Adding the components was done with freely hanging board cable and a bit of soldering for the pin lacking chips. Before I had realized that the Arduino could not send that great a signal to make the time right, I put the components on a breadboard. Images below show the progress. 
+Adding the components was done with freely hanging board cable and a bit of soldering for the chips that where lacking pins. During development i realized the Arduino could not send a signal that strong by it self for this timekeeping, so i proceeded by adding the components on a breadboard. Images below show the progress. 
 
 ![Image](https://github.com/user-attachments/assets/e6207a55-01e6-4ea3-bd06-8b9a1a832bc1)
 The breadboard uses two separate lines for ground and current feed (two long canals on the left of the components). 
@@ -57,7 +57,7 @@ The above image shows the connection points on the RTC. This was GND, drive volt
 
 
 
-To make the signal change polarity, I sketched what I thought to be a good solution. This, I later understood, was a classic component called the H-Bridge. Down below are images of what I imagined this part to do. It used some kind of gates (initially I thought this could be some PNP or NPN transistors, I wasn't sure).
+To make the signal change polarity, I sketched what I thought to be a good solution. This (I later understood) greatly resembled what is a classic H-Bridge. Down below are images of what I imagined this part to do. It used some kind of gates (initially I thought this could be some PNP or NPN transistors, I wasn't sure).
 
 Image
 I indicated M for "motor" and wrote directions for what would need to happen to make the current direction shift.
@@ -159,12 +159,13 @@ To test the signal, I connected the pins from 754410 directly to LED. Since it o
 
 
 ![Image](https://github.com/user-attachments/assets/918a3942-5259-4cc2-99df-af9a87dfc339)
-To my delight, the light appeared, showing that the code and circuit design was working. 
+To much happinees, the light appeared, showing that the code and circuit design was working. 
 
 
 I then connected this to a multimeter and increased the voltage sent from the SX1308 to an average of 24v.   
 
-To finish off, I used a USB c connector to ensure that I could use it with both battery and direct power. Since the Arduino consumes roughly 20mA, the battery alternative needs to be in the x-thousands of milliamps to not require changing all the time. For my project it was rather the option, not the efficiency, that was central.  If one really demands a more power efficient option, I believe a ATTINI85 could be a reasonable improvement. 
+To finish off, I used a USB c connector to ensure that I could use it with both battery and direct power. Since the Arduino consumes roughly 20mA, the battery alternative needs a couple thousands of milliamps to not require changing all the time. For my project it was rather ability, not the efficiency, that was central. For power efficent demands, ATTINI85 is suggested. 
+
 ![Image](https://github.com/user-attachments/assets/ea73588d-1b98-443c-a827-9b260ae5fc51)
-This project has led me into some kind of interest of robotics and home automation. I do think I've been inspired to do some more projects in that fashion that I can share on this account in the future.  
+
 
