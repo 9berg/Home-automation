@@ -1,6 +1,6 @@
 # Home-automation
 
-This project was to make a frequently public environment clock system adapted for at-home usage.
+This project was to make a popular public environment clock system adapted for at-home usage.
 
 The idea was to replace a remote clock signal device (commonly installed at separate facility room in schools, airports, hospitals etc.) with a solution mounted directly on the clock-face back, making the system installable just like any normal clock in a house.
 
