@@ -155,7 +155,7 @@ A while later, this H-bridge was placed as the 754410 component in the final cir
 
 
 
-To test the signal, I connected the pins from 754410 directly to LED. Since it only allowed passage in one direction, it therefore ran with half the tempo, and gave a good oversight on how long the "on" duration would be for the signal. 
+To test the signal, I connected the pins from 754410 directly to LED. Since diodes only allows passage in one direction, it emmited light in a 1/2 tempo. This also helped me tune the "on" duration for the signal. 
 
 
 ![Image](https://github.com/user-attachments/assets/918a3942-5259-4cc2-99df-af9a87dfc339)
