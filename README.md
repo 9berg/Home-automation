@@ -139,7 +139,7 @@ void  loop(){
   Alarm.delay(1000);
 
 }
-A while later, this H-bridge was placed as the 754410 component in the final circuit (here the RTC is missing).
+
 
 
 
