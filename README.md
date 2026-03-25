@@ -58,7 +58,7 @@ The above image shows the connection points on the RTC. This was GND, drive volt
 The code was used with Arduino IDE. The ports on the Arduino can be changed if desirable, as well as the synchronization start for the time and date. When setting up, I recommend using the Alarm.timeRepeat set at 1 instead of 60 to enable testing connection every second. 
 
 ________________________________________________________________________________________________________
-
+```
 #include <DS1307RTC.h>
 #include <Time.h>
 #include <TimeAlarms.h>
@@ -140,7 +140,7 @@ void  loop(){
 
 }
 
-
+```
 
 
 To test the signal, I connected the pins from 754410 directly to LED. Since diodes only allows passage in one direction, it emmited light in a 1/2 tempo. This also helped me tune the "on" duration for the signal. 
